@@ -1,0 +1,28 @@
+<!DOCTYPE hmtl>
+<html lang='en'>
+	<head>
+		<meta charset = 'UTF 8'>
+		<title> Movie Add </title>
+		<link rel = 'stylesheet' href='style.css'>
+	</head>
+	
+	<body>
+		<div id= "addmovie">
+			<form action= "addmovie.php" enctype="multipart/form-data" method="post">
+				
+				<label for="name"> Movie Name </label>
+				<input type="text" id="name" name="moviename" maxlength="30" required>
+				<label for="genre"> Genre</label>
+				<input type="text" id="genre" name="genre" maxlength="30" required>
+				<label for="year"> Year_released </label>
+				<input type="number" id="year" name="year_released" step=".01" max="9999999999" required>
+				<label for="img"> Movie Name </label>
+				<input type="file" id=img" name="file" accept="image/*" required>
+				<center><button class="addbtn" name="add"> Submit </button></center>
+		</div>
+			</form>
+	</body>
+
+
+
+</html>

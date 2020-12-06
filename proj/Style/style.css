@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+.container{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center
+
+}
+/* Home  Section */
+
+section#home .navigations {
+  overflow: hidden;
+  background-color: black;
+  opacity: .6;
+}
+
+section#home .navigations a {
+  color: white;
+  text-align: center;
+  padding: 24px 26px;
+  margin-left: : 20px;
+  text-decoration: none;
+  font-size: 20px;
+  float: left;
+  transition: .3s;
+
+}
+
+section#home .navigations a:hover {
+  color: white;
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+
+section#home{
+  background-image: url(../images/music-bg.jpg);
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  z-index: 1;
+}
+section#home::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: .3;
+  z-index: -1;
+}
+
+section#home h1{
+  display: block;
+  width: fit-content;
+  font-size: 50px;
+  position: relative;
+  color: white;
+  letter-spacing: 4px;
+}
+
+
+section#home h2{
+  display: block;
+  width: fit-content;
+  font-size: 50px;
+  position: relative;
+  color: white;
+  letter-spacing: 4px;
+}
+
+section#home .cta{
+  display: inline-block;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  font-size: 20px;
+  padding: 10px 30px;
+  margin-top: 30px;
+  text-transform: uppercase;
+  transition: .5s ease;
+  transition-property: color;
+}
+
+section#home .cta:hover{
+  color: white;
+  border-color: white;
+  background-color: black;
+  opacity: .6;
+
+}
+
+
+/* Search Section */
+section#search{
+  padding: 120px;
+  background-image: url(../images/music-bg2.jpg);
+  background-size: 100%;
+  background-position: top center;
+  position: relative;
+  z-index: 1;
+  border: 5px solid white;
+  color: white;
+}
+
+section#search .discover-top{
+  flex-direction: column;
+}
+
+section#search .discover-top h1{
+  display: block;
+  width: fit-content;
+  font-size: 80px;
+  position: relative;
+  letter-spacing: 10px;
+  padding-bottom: 30px;
+}
+
+#music{
+  text-align: center;
+  width: 100%;
+  overflow-x: hidden; 
+  overflow-y: auto; 
+  
+}
+
+section#search .discover-top p{
+  border: 5px solid white;
+  padding: 70px;
+  line-height: 200%;
+  text-align: justify;
+  font-size: 40px;
+}
+
+section#search .discover-top h3{
+  text-align: center;
+  display: block;
+  font-size: 50px;
+  position: relative;
+  color: white;
+  letter-spacing: 15px;
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section#search .form-box{
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section#search #inputValue{
+  height: 80px;
+  width: 500px;
+  border-radius: 25px;
+  border: 3px solid black;
+  outline: none;
+}
+section#search input[type="text"] {
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  padding-left: 20px;
+}
+
+section#search #search-button{
+  height: 80px;
+  width: 80px;
+  border: 3px solid white;
+  border-radius: 25%;
+  background: grey;
+  outline: none;
+}
+
+
+section#search #search-button:hover{
+  color: grey;
+  border-color: white;
+  background-color: grey;
+  opacity: .6;
+}
+
+section#search .discover-top .row{
+  /* CSS for Results */
+  height: 100vh;
+  border: 3px solid black;
+  overflow-y:auto;
+}
+
+
+section#search .discover-top .playlist-row{
+  height: 100vh;
+  border: 3px solid white;
+  overflow: auto;
+}
+
+section#search .discover-top .playlist-row h1{
+  top: 1rem;
+  font-size: 28px;
+  margin-left: auto;
+  margin-right: auto;
+}
