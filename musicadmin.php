@@ -12,17 +12,23 @@
 
                 <input type="user" placeholder="Song Title" name="title" id="stitle" required>
     </div>
-
+            <input type="hidden" id="hidden" name="hidden" value="...">
         
             <div class="textbox">
                 <input type="search" placeholder="ID" name="id" id="id--" required>
                 <input type="text" name="title" placeholder="Update the Title"> <br>
+
             </div>
+
                 <input class="btn" type="button" name="search" value="Search Music" id="searchbutton">
                 <input class="btn" type="submit" name="create" value="Recommend">
-                <input class="btn" type="button" name="read" value="Refresh" id="read">
+                  <input class="btn" type="button" name="read" value="Refresh" id="read">
+                 <input class="btn" type="button" name="title" value="Update">
+
+
+              
                 
-                <input class="btn" type="button" name="title" value="Update">
+               
         </div>
        <div class="row">
             <div class="col-sm-3 col-md-6">    
@@ -45,7 +51,58 @@
                 <tbody id="tbody">
                     <?php 
 
-                    if (isset($_POST['read'])) {
+                        $conn = new mysqli("localhost","root","","website");
+                        if($conn->connect_error){
+                            die("Failed to connect : ".$conn->connect_error);
+                        } else{
+                            $stmt = $conn->prepare("SELECT * FROM `links`");
+                            $stmt->execute();
+                            $stmt_result = $stmt->get_result();
+
+
+                            $stmt2 = $conn->prepare("SELECT COUNT(`item_id`) FROM `links`");
+                            $stmt2->execute();
+                            
+                            $count = $stmt2->get_result();
+
+                            $row = mysqli_fetch_array($count);
+                           
+
+                            for ($i=0; $i < $row[0]; $i++) { 
+                                $data = $stmt_result->fetch_assoc();
+                                echo '<script type="text/javascript"> 
+                                    var makeIframe = document.createElement("iframe");
+                                        makeIframe.setAttribute("width", "300");
+                                        makeIframe.setAttribute("height", "350");
+                                        makeIframe.setAttribute("frameborder", "0");
+                                        makeIframe.setAttribute("transparency", "true");
+                                        makeIframe.setAttribute("id", "frameid");
+                                        makeIframe.setAttribute("allow", 
+                                        "encrypted-media");
+                                        makeIframe.setAttribute("src", 
+                                        "https://open.spotify.com/embed/track/' . $data['song_id'] .'");
+                                      
+                                    document.getElementById("tbody").appendChild(makeIframe);
+
+
+                                     </script>';
+                            }
+
+                            if($stmt_result->num_rows > 0) {
+                                
+                            } else {
+                                
+                            }
+
+                        }
+
+
+
+
+
+
+
+                    if (isset($_POST['hidden'])) {
                         $result = getData();
 
                         if ($result) {
@@ -73,10 +130,18 @@
 </html>
 
 
+<?php 
+   
+
+
+
+?>
+
+
 <?php
-    if (isset($_POST['read'])) {
-       echo "what";
-    }
+
+ 
+    
     if (isset($_POST['id'])) {
         $user = $_POST['title'];
         $pass = $_POST['id'];
