@@ -1,0 +1,414 @@
+/*
+Author: Adriel Gaviola
+Description: CSS file of the movie page.
+Version: 1.3
+License: GNU General Public License
+*/
+html, body {
+	background: url('../images/theater.png') no-repeat center center fixed;
+	background-size:cover;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	min-height: 100vh;
+	transition:1s;
+}
+
+/*Font area*/
+@font-face {
+	font-family: 'lemon-milk';
+	src: url(../fonts/Lemon-light.otf);
+	font-style: normal;
+	font-weight: 100;
+}
+
+@font-face {
+	font-family: 'century-gothic';
+	src: url(../fonts/Century-gothic.ttf);
+	font-style: normal;
+	font-weight: 100;
+}
+
+@font-face {
+	font-family: 'gotham-black';
+	src: url(../fonts/Gotham-black.ttf);
+	font-style: normal;
+	font-weight: 100;
+}
+
+@font-face {
+	font-family: 'futura';
+	src: url(../fonts/Futura.ttf);
+	font-style: normal;
+	font-weight: 100;
+}
+
+@font-face {
+	font-family: 'baufra-m';
+	src: url(../fonts/Baufra-Medium.ttf);
+	font-style: normal;
+	font-weight: 100;
+}
+
+@font-face {
+	font-family: 'baufra-r';
+	src: url(../fonts/Baufra-Regular.ttf);
+	font-style: normal;
+	font-weight: 100;
+}
+
+@font-face {
+	font-family: 'montserrat';
+	src: url(../fonts/Montserrat-Light.ttf);
+	font-style: normal;
+}
+
+/*Navigation bar*/
+.group-name {
+	background: #FFFF;
+	width: 100%;
+	margin: 0;
+	font-family: montserrat;
+	font-weight: 500;
+	font-size: 1.7rem;
+}
+
+section#home .navigations {
+	flex-direction: row;
+	overflow: hidden;
+	background-color: #000000;
+	opacity: .8;
+	padding: 20px 0 20px 40px;
+}
+section#home .navigations a {
+	color: #ffff;
+	text-align: center;
+	padding: 6px;
+	margin-left: 20px;
+	text-decoration: none;
+	font-family: montserrat;
+	font-size: 1.3rem;
+	border: 2px solid transparent;
+}
+
+section#home .navigations a:hover {
+	transition: .5s;
+	border: 2px solid #ffff;
+}
+
+/*Search bar area*/
+.search-bar {
+	margin-top: 5%;
+	display: inline-flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.search-bar input {
+	box-shadow: 1px 5px 6px 1px rgba(0,0,0,0.35);
+	background: rgba(0,0,0,0.7);
+	width: 50%;
+    height: 34px;
+    padding-left: 10px;
+    outline: none;
+	border: 2px solid #ffff;
+	color: rgba(255,255,255, 0.9);
+	font-size: 1rem;
+	border-radius: .20rem;
+}
+
+#search {
+	background: url('../images/search.png') no-repeat center ;
+	background-color: rgba(255,255,255,0.7);
+	margin-left: -2px;
+	cursor: pointer;
+	border-style: none;
+    width: 50px;
+    height: 40px;
+    transition: .25s;
+    filter: invert(1);
+	border: 2px solid #000000;
+	border-left-style:none; 
+	border-top-right-radius: .20rem;
+	border-bottom-right-radius: .20rem;
+}
+
+#search:hover {	
+	border: 3px solid #000000;
+	border-radius: .50rem;
+}
+
+.filter-buttons {
+	padding: 0;
+	margin: 1px 0 0 320px;
+	width: 45%;
+	height: 40px;
+	display: inline-flex;
+}
+
+.filter-buttons button {
+	background-color: transparent;
+	padding: 0;
+	cursor: pointer;
+	border-style: none;
+    width: 20%; 
+	outline: none;
+	color: #ffff;
+    font-family: futura;
+    font-size: 1.1rem;
+    border: 2px solid transparent;
+}
+ 
+.filter-buttons button:hover {
+	transition:0.5s;
+	border: 2px solid #ffff;
+}
+
+/*Display searched movies/tv shows area*/
+.movie-section {
+	margin: 1%;
+	padding: 0;
+	width: 100%;
+	display: inline-block;
+	align-items: center;
+	justify-content: center;
+}
+
+.movie-section img {
+	border: 3px solid #ffff;
+	border-radius: .25rem;
+	box-shadow: 2px 2px 18px rgba(0, 0, 0, 0.3);
+	margin: 1% 1.5% 0 1.5%;
+	width: 250px;
+	height: 350px;
+	transition: 300ms all;
+}
+
+.movie-section img:hover {
+	cursor: pointer;
+	transform: scale(1.05);
+}
+
+
+/*Details of the selected movie*/
+.row {
+	background-color: rgba(0,0,0,0.8);
+	width: 100%;
+	height:70vh;
+	overflow: auto; 
+	margin: 50px auto 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    color: #ffff;
+}
+
+.poster {
+	margin: 20px 20px 20px 20px;
+	width: 200px;
+	height: 300px;
+}
+
+.poster img{
+	border: 3px solid #ffff;
+	height: 100%;
+	width: 100%;
+}
+
+
+.movie-details {
+	width: 60%;
+}
+
+.movie-details h2 {
+	margin: 20px 0 0 8px;
+	padding: 0;
+	font-size: 1.5rem;
+	font-family: baufra-m;
+}
+
+.movie-details h3 {
+	margin: 0 0 0 8px;
+	padding: 0;
+	font-size: 1.2rem;
+	font-family: baufra-m;
+}
+
+.movie-details p, ul {
+	padding: 10px;
+	margin: 0;
+	font-size: 0.9rem;
+}
+.movie-details p {
+	font-family: baufra-r;
+}
+
+.movie-details ul li{
+	font-family: century-gothic;
+}
+
+a.imdb-button, a.trailer-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center; 
+	width: 80px;
+	height: 25px;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	color: #ffff;
+	font-size: 0.8rem;
+	font-family: raleway;
+	transition-duration: .5s;
+	border: 2px solid transparent;
+}
+
+a.imdb-button:hover, a.trailer-button:hover {
+	border: 2px solid #ffff;
+}
+
+.back-button {
+	width: 200px;
+	margin-left: 20px;
+	text-decoration: none;
+	color: #ffff;
+	border-bottom: 1px solid #ffff;  
+	font-family: raleway;
+	font-size: 0.8rem;
+}
+
+.movie-details strong {
+	font-family: raleway;
+	font-size: 0.95rem;
+	font-weight: 600;
+}
+
+.movie-details ul {
+	list-style-type: none;
+}
+
+.movie-details ul li {
+	padding-bottom: 5px;
+}
+
+/*Movie trailer design*/
+.youtube {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 10000;
+	background: rgba(0,0,0,0.9);
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.youtube.active {
+	visibility: visible;
+	opacity: 1;
+}
+
+.youtube img {
+	position: absolute;
+	filter: invert(1);
+	top: 30px;
+	right: 30px;
+	cursor: pointer;
+	max-width: 20px;
+
+}
+
+.youtube .video iframe{
+	position: relative;
+	width: 700px;
+	height: 400px;
+	outline: none; 
+}
+
+.movie-page-content {
+	display: none;
+}
+
+/*Smaller device's viewport*/
+@media (max-width: 875px) {
+	.youtube .video iframe {
+		width: 100%;
+		height: 100%;
+	}
+
+	.movie-details {
+		width: 50%;
+	}
+	
+	.back-button{
+		width: 120px;
+		position: absolute;
+	    bottom: 40%;
+    	left: 10px;
+		font-size: .6rem;
+	}
+
+	.movie-details p,ul {
+		font-size: calc(1vw + 0.35rem);
+	}
+
+	.movie-details h2 {
+		font-size: calc(1vw + 1rem);
+	}
+
+	.movie-details h3 {
+		font-size: calc(1vw + 0.8rem);
+	}
+
+	.trailer-button, .imdb-button{
+		padding: 5px;
+		margin: 0;
+		width: 65px;
+		height: 10px;
+		font-size: 10px;
+		justify-content: center;
+	}
+
+	.poster {
+		margin: 20px 20px 20px 20px;
+		width: 130px;
+		height: 200px;
+	}
+
+	.movie-section img {
+		width: 18%;
+		height: 28%;
+
+	}
+
+	.filter-buttons {
+		margin: 0 0 0 20px;
+		width: 90%;
+	}
+
+	.filter-buttons button {
+		width: 80px;
+    	height: 25px;
+		font-size: calc(1vw + 0.6rem);
+	}
+
+	input#search-value {
+		width: 70%;
+	}
+
+	section#home .navigations {
+		padding-left: 10px;
+	}
+
+	section#home .navigations a, .group-name {
+		font-size: calc(1vw + 0.6rem);
+	}
+}
